@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My plans</title>
+
+		<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<link rel="stylesheet" href="enroll_plans.css" type="text/css">	
+		
+        <!--MVC loading-->
+        <script src="src/controller/initialize.js"></script>
+        <script src="src/model/plans.js"></script>
+        <script src="src/view/enroll_plans.js"></script>
+        <script>
+            window.addEventListener('load', init.view.createplans.setupUI);
+        </script>
+    <!--end of MVC loading-->
+        
+		
+
+    </head>
+	<body>
+        <div class="alert"></div>
+				<h3 id="enterhere"><center>Enter the plans you enrolled</center></h3>
+				<form method="POST" name="plans"  id="plans">
+					<label for="pid">pid</label>
+                    <input type="text" name="pid" id="pid" placeholder="Enter Policy id" required/>
+                    
+					<label for="plan_name">PLAN NAME</label>
+					<input type="text" name="plan_name" id="plan_name" placeholder="Entered enrolled plan name" required/>
+                    
+					<label for="duration">Duration</label>
+					<input type="text" name="duration" id="duration" placeholder="Enter Duration" required/>
+                    
+					<label for="amount">amount</label>
+					<input type="number" name="amount" id="amount" placeholder="Enter Amount" required/>
+					
+					<label for="sum">sum</label>
+					<input type="number" name="sum" id="sum" placeholder="Total Sum amount"/>
+					
+					
+					<button type="submit"  name="commit" id="submit">SUBMIT</button>
+                    <button type="submit"  name="back" id="back"><a href="home.html" style="color: white;text-decoration: none;">BACK</a></button>
+                </form>
+			</div>
+		
+	</body>
+</html>
+
+				

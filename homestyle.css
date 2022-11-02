@@ -1,0 +1,258 @@
+/*body
+{
+    background-image:url("pics/body-bg.jpg");
+    background-size:cover;
+}*/
+
+
+/*---------------logo- start------------------ */
+
+#planbutton
+{
+    
+    height:6vh !important;
+    text-align: center;
+    font-weight:bold;
+    font-size:3.5vh;
+    margin-bottom:2%;
+    background-color:lightslategrey !important;
+}
+.panel-group 
+{
+    padding-left: 42px;
+    padding-right: 42px;
+    width:50vh !important;
+}
+.circle
+{
+    position:relative;
+    width: min(50vh ,250px);
+    height:min(50vh,250px);
+    border-radius: 50%;
+    background:#ccc;/*must*/
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin-top:8%;
+    margin-left:6%;
+}
+
+.logo
+{
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:url("pics/logo.jpeg");
+    background-size: cover; /*to adjust to the background*/
+    border-radius:50%;/* to get circle shape*/
+    filter: brightness(1.5) contrast(1.5);
+}
+.text
+{
+    position:absolute;
+    width:100%;
+    height:100%;
+    color:brown;
+    font-weight: 800;
+    animation: rotateText 10s linear infinite;
+    
+}
+@keyframes rotateText
+{
+    0%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }    
+}
+
+.text span
+{
+    position:absolute;
+    left:50%;
+    font-size: 1.2em;
+    transform-origin: 0 125px;
+}
+/*-----logo end----------------*/
+
+/*-------page title start-------*/
+.page-title p
+{
+    margin-left:35%;
+    margin-top:-14%;
+    font-size:14vh;
+    color:black;
+    text-shadow: 4px 4px 4px green;;
+    font-family: Bebas Neue !important;
+}
+.page-title h6
+{
+    font-size:3vh;
+    margin-left:45%;
+    margin-top:-2%;
+
+}
+.glyphicon.glyphicon-heart
+{
+    color:red;
+}
+/*-----------end of page title--------------*/
+.demo > .btn 
+{
+    font-weight: bold !important;
+    font-size:3.5vh;
+    font-family: monospace;
+    outline:none !important;
+}
+/*-----------self care section start--------*/
+#selfcare > .btn
+{
+    
+    height:min(30vh,50px);
+    font-size:4vh;
+    font-weight:bold;
+    font-family: monospace;
+    margin-top:1%;
+    outline:none !important;
+    background-color:lightslategrey !important;
+    
+}
+.panel-primary >.panel-heading-custom
+{
+    background-color: cadetblue !important;
+    text-align: center;
+    font-size:2.5vh;
+    font-family:monospace;
+    color:#fff;
+    font-weight: bold;
+}
+.panel-primary > .panel-footer > .btn 
+{
+    
+   margin-left:10%;
+   width:35%;
+   font-size: 2vh;
+   font-weight: 200;
+   outline:none;
+}
+
+.popup .overlay /*for background*/
+{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background: rgba(0,0,0,0.7);
+    z-index:1;
+    display: none;
+}
+.popup .content
+{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background: #fff;
+    width: 550px;
+    height: 320px;
+    z-index:2;
+    text-align:center;
+    padding: 20px;
+    box-sizing:border-box;
+    margin-top: 37% ;
+    
+}
+.popup .close-btn
+{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background: #222;
+    color:#fff;
+    font-size:25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align:center;
+    border-radius:50%;
+}
+
+.popup.active .overlay
+{
+    display: block;
+    margin-top: inherit;
+} 
+
+.popup.active .content
+{
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+#services
+{
+	background: black;
+	background-size: cover;
+	background-position: center;
+	color:#555!important;
+	background-attachment: fixed;
+	padding-top:50px;
+	padding-bottom: 50px;
+}
+
+
+
+#services h1
+{
+	text-align: center;
+	color:#fff!important;
+	padding-bottom: 10px;
+}
+
+#services h1::after
+{
+	content: '';
+	background:#efefef;
+	display: block;
+	height:3px;
+	width:170px;
+	margin: 20px auto 5px;
+}
+#services h3
+{
+	font-weight: 400;
+	color: white;
+	margin: auto;
+}
+#services p
+{
+	font-weight: 400;
+	color: white;
+	margin: auto;
+	margin-top: 20px;
+}
+
+
+
+
+
+.services .col-md-4:hover{
+	background:#007bff;
+	cursor: pointer;
+	transition: 0.7s;
+	
+}
+
+footer
+{
+	text-align:center;
+	background-color:#777;
+	color:#fff;
+		
+
+}

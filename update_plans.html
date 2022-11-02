@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>updatePlan</title>
+
+    <!--bootsrap4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="update_plans.css">
+
+    <!--loading MVC-->
+    <script src="src/controller/initialize.js"></script>
+    <script src="src/model/plans.js"></script>
+    <script src="src/view/update_plans.js"></script>
+    <script>
+      window.addEventListener('load', init.view.updateplans.setupUI);
+    </script>
+    <!--ending MVC-->
+
+  </head>
+  <body>
+    <div class="alert"></div>
+    <form id="plans" action="">
+      <h1>UPDATE YOUR INFORMATION ENTERED</h1>
+        <label for="selectplans">Select enrtered plans:</label>
+          <select name="selectplans">
+            <option value="">---</option>
+          </select>
+        
+      <label for="pid">pid:</label> 
+      <input name="pid" readonly="readonly" />
+      
+      <label for="plan_name">Plan Name: </label>
+      <input name="plan_name" />
+      
+      <label for="duration">Duration: </label>
+      <input name="duration" />
+      
+      <label for="amount">Amount:</label>
+      <input name="amount"/>
+      
+      <label for="sum">Sum:</label>
+      <input name="sum"/>
+      
+      <button type="submit" name="commit" id="save">Save Changes</button>
+      <button type="button" class="btn btn-info"  style="width: 17vw !important; height:6vh;"><a href="home.html" style="color: white;">Back</a></button>
+    </form>
+    
+  </body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>home page</title>
+		
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="homestyle.css">
+		
+		<!--adding  google font
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">-->
+        <!--adding google font sofia
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+		<script src="js/home.js"></script>
+	</head>
+    <body>
+		
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="mynavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">JEEVAN</a>
+					</div>
+					<ul class="nav navbar-nav" id="mynavbar">
+						<li class="dropdown">
+							<a href="#" class="navbar-dropdown" data-toggle="dropdown"><span class="glyphicon glyphicon-ok">OUR PLANS</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#selfcare" onclick="plandetails()">SELF CARE</a></li>
+								<li><a href="#family-plans" onclick="plandetails()">FAMILY PLANS</a></li>
+								<li><a href="#senior-citizen" onclick="plandetails()">SENIOR CITIZEN</a></li>
+							</ul>
+						</li>
+							<li><a href="#about"><span class="glyphicon glyphicon-asterisk">ABOUT US</span></a></li>
+                        <li><a href="#services"><span class="glyphicon glyphicon-cog">SERVICES</span></a></li>
+						<li class="dropdown">
+							<a href="my_plans" class="navbar-dropdown" data-toggle="dropdown"><span class="glyphicon glyphicon-user">MY PLANS</span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="enroll_plans.html">ENROLLED PLANS</a></li>
+								<li><a href="list_plans.html">VIEW</a></li>
+								<li><a href="update_plans.html">UPDATE</a></li>
+								<li><a href="delete_plans.html">DELETE</a></li>
+							</ul>
+						</li>
+						</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-user">SIGNUP</span></a></li>
+						<li><a href="index.html"><span class="glyphicon glyphicon-log-in">LOG OUT</span></a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-search">SEARCH</span></a></li>
+					</ul>
+				</div>
+            </nav>
+
+			<div class="circle">
+				<div class="logo"></div>
+					<div class="text">
+						<p>JEEVAN*INSURANCE*PORTAL*</p>
+					</div>
+			</div>
+			<script>
+				const text=document.querySelector('.text p');
+				text.innerHTML=text.innerText.split("").map(
+					(char,i)=>`<span style="transform:rotate(${i*15}deg)">${char}</span>`
+				).join("");
+			</script>
+			<div class="page-title">
+				<p>JEEVAN INSURANCE</p>
+				<h6><span class="glyphicon glyphicon-heart">We Ensure to Insure</span><span class="glyphicon glyphicon-heart"></span></h6>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="demo">
+			<button type="button" class="btn btn-primary btn-block">OUR PLANS</button>
+			</div>
+			<!---self care section start-->
+			<section id="selfcare">
+	
+				<br>
+				<br>
+				<button type="button" class="btn btn-warning btn-block">SELF CARE</button>
+				<br>
+				<br>
+				<div class="plan1">
+				<div class="col-sm-4">
+					<div class="panel-group">
+						<div class=" panel-primary">
+							<div class="panel-heading panel-heading-custom">HOSPITALIZATION FEES</div>
+							<div class="panel-body">
+								<img src="pics/hospital.png" width="100%" height="100%">
+							</div>
+							<div class="panel-footer">
+								<button type="button" class="btn btn-danger"  onclick="hositalizationdetails()">DETAILS</button>
+								<button type="button" class="btn btn-success" onclick="enroll()">ENROLL</button>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="popup" id="popup-1">
+					<div class="overlay"></div>
+					<div class="content">
+						<div class="close-btn" onclick="hositalizationdetails()">&times;</div>
+						<h3>HOSPITALIZATION COVER</h3>
+						<p>hospitalization cover is for you </p>
+						<p>Comprehensive Hospitalization Coverage Without Any Sub-Limits. </p>
+						<p>Principle amount:2000 , tax:2%,GST:2%</p>
+						<p>Duration:1 year with grace period of 30days</p>
+						<p>Sum insured can range from Rs.1.5 lakhs to Rs.10 lakhs</p>
+					</div>
+				</div>
+				<div class="plan2">
+					<div class="col-sm-4">
+						<div class="panel panel-group">
+							<div class=" panel-primary">
+								<div class="panel-heading panel-heading-custom">DEATH BENEFITS</div>
+								<div class="panel-body">
+									<img src="pics/death.png" width="100%" height="100%">
+								</div>
+								<div class="panel-footer panel-custom">
+									<button type="button" class="btn btn-danger" id="clickhere" onclick="deathbenifitsdetails()">DETAILS</button>
+									<button type="button" class="btn btn-success" onclick="enroll()" >ENROLL</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popup" id="popup-2">
+						<div class="overlay"></div>
+						<div class="content">
+							<div class="close-btn" onclick="deathbenifitsdetails()">&times;</div>
+							<h3>DEATH BENEFTS</h3>
+							<p>Death benefits  is for you </p>
+							<p>Accidental Cover & Disability Benefits.</p>
+						<p>Principle Amount: 2300 , Tax:2%, GST:4%</p>
+						<p>Duration:1 year with grace period of 30days</p>
+						<p>Sum insured can range from Rs.1.5 lakhs to Rs.10 lakhs</p>
+						</div>
+					</div>
+					<div class="plan3">
+						<div class="col-sm-4">
+							<div class=" panel panel-group">
+								<div class=" panel-primary">
+									<div class="panel-heading panel-heading-custom">EMERGENCY COVER</div>
+									<div class="panel-body">
+										<img src="pics/emergency.png" width="68%" style="margin-left:14% !important";>
+									</div>
+									<div class="panel-footer">
+										
+										<button type="button" class="btn btn-danger"  onclick="emergencydetails()" >DETAILS</button>
+										<button type="button" class="btn btn-success" onclick="enroll()">ENROLL</button>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="popup" id="popup-3">
+					<div class="overlay"></div>
+					<div class="content">
+						<div class="close-btn" onclick="emergencydetails()">&times;</div>
+						<h3>EMERGENCY COVER</h3>
+						<p>emergency cover is for you </p>
+						<p>Free Health Check-Up + Bonus on No Claim. Get Policy From Top Health Insurers. 10,000+ hospitals for cashless treatment + claim assistance. </p>
+						<p>Principle Amount: 2300 , Tax:2%, GST:4%</p>
+						<p>Duration:2 year with grace period of 30days</p>
+						<p>Sum insured can range from Rs.1.5 lakhs to Rs.10 lakhs</p>
+					</div>
+				</div>
+			</section>
+			<!----------selfcare section close---------------->
+			<!----------family-plans section start------------>
+			<br>
+			<br>
+			<button type="button" class="btn btn-warning btn-block" id="planbutton">FAMILY PLAN</button>
+			<section id="family-plans">
+				<div class="plan1">
+					<div class="col-sm-4">
+						<div class="panel-group">
+							<div class=" panel-primary">
+								<div class="panel-heading panel-heading-custom">EXTRA COVER</div>
+								<div class="panel-body">
+									<img src="pics/extra-cover.jpeg" width="250vw" height="200vh">
+								</div>
+								<div class="panel-footer panel-custom">
+									<button type="button" class="btn btn-danger" id="clickhere" onclick="extracoverdetails()">DETAILS</button>
+									<button type="button" class="btn btn-success" onclick="enroll()" >ENROLL</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popup" id="extrapopup1">
+						<div class="overlay"></div>
+						<div class="content">
+							<div class="close-btn" onclick="extracoverdetails()">&times;</div>
+							<h3>Extra Cover</h3>
+							<p>extra cover  is for you </p>
+							<p>Details of policy (4-6 lines including benifits of it )</p>
+						<p>Amount: (actual amount, with tax, GST) (eg: actual amount:2000,gst:30,tax:12 => amount=2052</p>
+						<p>Duration(eg- 2 months,6 months  etc)</p>
+						<p>Sum amount at the end</p>
+						</div>
+					</div>
+					<div class="plan2">
+						<div class="col-sm-4">
+							<div class="panel-group">
+								<div class=" panel-primary">
+									<div class="panel-heading panel-heading-custom">OPD</div>
+									<div class="panel-body">
+										<img src="pics/opd.png" width="250vw" height="200vh">
+									</div>
+									<div class="panel-footer panel-custom">
+										<button type="button" class="btn btn-danger" id="clickhere" onclick="opddetails()">DETAILS</button>
+										<button type="button" class="btn btn-success" onclick="enroll()" >ENROLL</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup" id="opdpopup">
+							<div class="overlay"></div>
+							<div class="content">
+								<div class="close-btn" onclick="opddetails()">&times;</div>
+								<h3>OPD</h3>
+								<p>OPD is for you </p>
+							</div>
+						</div>
+						<div class="plan3">
+							<div class="col-sm-4">
+								<div class="panel-group">
+									<div class=" panel-primary">
+										<div class="panel-heading panel-heading-custom">CARE BEYOND COVER</div>
+										<div class="panel-body">
+											<img src="pics/cbc.jpeg" width="250vw" height="200vh">
+										</div>
+										<div class="panel-footer panel-custom">
+											<button type="button" class="btn btn-danger" id="clickhere" onclick="caredetails()">DETAILS</button>
+											<button type="button" class="btn btn-success" onclick="enroll()" >ENROLL</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="popup" id="carepopup">
+								<div class="overlay"></div>
+								<div class="content">
+									<div class="close-btn" onclick="caredetails()">&times;</div>
+									<h3>Care Beyond Cover</h3>
+									<p>Care Beyound Cover is for you </p>
+								</div>
+							</div>
+			</section>
+			<!------------family section ends----------------->
+			<!------------senior citizen section starts--------->
+			<br>
+			<br>
+			<button type="button" class="btn btn-warning btn-block" id="planbutton">SENIOR CITIZEN</button>
+			<section id="senior-citizen">
+				<div class="plan1">
+					<div class="col-sm-4">
+						<div class="panel-group">
+							<div class=" panel-primary">
+								<div class="panel-heading panel-heading-custom">CONSTANT PREMIUM</div>
+								<div class="panel-body">
+									<img src="pics/constant.jpg" width="100%" height="68%">
+								</div>
+								<div class="panel-footer panel-custom">
+									<button type="button" class="btn btn-danger" id="clickhere" onclick="constantdetails()">DETAILS</button>
+									<button type="button" class="btn btn-success" onclick="enroll()" >ENROLL</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popup" id="constantpopup">
+						<div class="overlay"></div>
+						<div class="content">
+							<div class="close-btn" onclick="constantdetails()">&times;</div>
+							<h3>CONSTANT PREMIUM</h3>
+							<p>Constant premium is for you </p>
+						</div>
+					</div>
+					<div class="plan2">
+						<div class="col-sm-4">
+							<div class="panel-group">
+								<div class=" panel-primary">
+									<div class="panel-heading panel-heading-custom">INSTALLMENT FACILITY </div>
+									<div class="panel-body">
+										<img src="pics/istallment.jpg" width="95%" height="68%">
+									</div>
+									<div class="panel-footer panel-custom">
+										<button type="button" class="btn btn-danger" id="clickhere" onclick="installdetails()">DETAILS</button>
+										<button type="button" class="btn btn-success" onclick="enroll()" >ENROLL</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup" id="installpopup">
+							<div class="overlay"></div>
+							<div class="content">
+								<div class="close-btn" onclick="installdetails()">&times;</div>
+								<h3>INSTALLMENT FACILITY</h3>
+								<p>installment facility  is for you </p>
+								<p>Details of policy (4-6 lines including benifits of it )</p>
+									<p>Amount: (actual amount, with tax, GST) (eg: actual amount:2000,gst:30,tax:12 => amount=2052</p>
+									<p>Duration(eg- 2 months,6 months  etc)</p>
+									<p>Sum amount at the end</p>
+							</div>
+						</div>
+						<div class="plan3">
+							<div class="col-sm-4">
+								<div class="panel-group">
+									<div class=" panel-primary">
+										<div class="panel-heading panel-heading-custom">MEDICAL CONSULATION</div>
+										<div class="panel-body">
+											<img src="pics/medical.jpg" width="85%" height="68%" style="margin-left: 10%;">
+										</div>
+										<div class="panel-footer panel-custom">
+											<button type="button" class="btn btn-danger"  onclick="medicaldetails()" id="clickhere" >DETAILS</button>
+											<button type="button" class="btn btn-success" onclick="enroll()" >ENROLL</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="popup" id="seniorpopup3">
+								<div class="overlay"></div>
+								<div class="content">
+									<div class="close-btn" onclick="medicaldetails()" id="clickhere" >&times;</div>
+									<h3>MEDICAL CONSULATION</h3>
+									<p>medical consulation is for you </p>
+									<p>Details of policy (4-6 lines including benifits of it )</p>
+									<p>Amount: (actual amount, with tax, GST) (eg: actual amount:2000,gst:30,tax:12 => amount=2052</p>
+									<p>Duration(eg- 2 months,6 months  etc)</p>
+									<p>Sum amount at the end</p>
+								</div>
+							</div>
+			</section>
+
+			<!------About Section------->
+		
+	<section id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+				<h2>About Us</h2>
+					<div class="about-content">
+					Welcome to JEEVAN INSURANCE, your number one source for better. We're dedicated to giving you the very best of services, with a focus on dependability, customer service and uniqueness.
+	
+					Founded in 2018 by JEEVAN, JEEVAN INSURANCE has come a long way from its beginnings. We have all sorts of plan with flexible terms and conditions to provide insurance as well as a better secured future for a person , you’ll find the perfect plans for your bright future .
+					JEEVAN INSURANCE is for you all the time ,"WE ENSURE YOU INSURE". If you have any questions or comments, please don't hesitate to contact us.
+	
+	
+					</div>
+				<button type="button" class="btn btn-primary">Read More>>
+				
+				</button>
+				
+				</div>
+				<div class="col-md-6 skills-bar">
+				<p>customers insured</p>
+				<div class="progress">
+				<div class="progress-bar" style="width:85%;">85%</div>
+				</div>
+				
+				<p>Customer Growth</p>
+				<div class="progress">
+				<div class="progress-bar" style="width:75%;">75%</div>
+				</div>
+				
+				<p>Happy Employee</p>
+				<div class="progress">
+				<div class="progress-bar" style="width:90%;">90%</div>
+				</div>
+				
+				</div>
+			</div>
+			
+		</div>	
+			
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<!------Services Section------->		
+		<section id="services">
+		
+			<div class="container">
+				<h1>Our Services</h1>
+				<div class="row services" >
+					<div class= "col-md-4 text-center">
+						
+						<h3> 24/7 Support</h3>
+						<p>Regarding plans terms and conditions</p>
+					</div>
+				
+					<div class="col-md-4 text-center">
+						
+						<h3>Available for all </h3>
+						
+					</div>
+				
+					<div class="col-md-4 text-center">
+						
+						<h3>Free consulations</h3>
+						<p>if a person has enrolled for 3 plans</p>
+					</div>
+				</div>
+			</div>
+		
+		</section>
+		<br>
+
+		
+	<br>
+	<br>
+	<br>
+	<br>
+	<!------COntact------------>	
+	<section id="to-know">	
+		
+		<div class="container">
+			<u><h1>To know you Better!!!</h1></u>
+			<h5>(please provide your contact details in order to inform you if any new plans launches)</h5>
+			<div class="row">
+				<div class="col-md-6">
+					<form class="contact-form" action="#offer-zone">
+					<div class="form-group">
+					<input type="text" class="form-control" placeholder="Your Name.." required>
+					</div>
+					<div class="form-group">
+					<input type="number" class="form-control" placeholder="Phone no." required>
+					</div>
+					<div class="form-group">
+					<input type="email" class="form-control" placeholder="Email id" required>
+					</div>
+					<div class="form-group">
+					<textarea class="form-control" rows="4" placeholder="Message.."></textarea>
+					</div>
+					
+					<button type="submit" class="btn btn-primary">Submit</button>
+					</a>
+					
+				</div>
+				
+				</div>
+				
+			</div>
+	
+		</div>
+	
+	</section>
+	
+		</body>
+</html>

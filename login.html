@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="login.css" type="text/css">
+
+<meta charset="UTF-8">
+<title>login form</title>
+
+<script>
+
+function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+
+function validateForm() {
+ 
+    var userid = document.contactForm.userid.value;
+    var password = document.contactForm.password.value;
+   // var mobile = document.contactForm.mobile.value;
+    //var country = document.contactForm.country.value;
+    //var gender = document.contactForm.gender.value;
+    
+    
+
+    var userErr = passErr = true;
+    
+  
+    if(userid == "") {
+        printError("userErr", "Please enter your name");
+    } else {
+        var regex = /^1(RV|rv)20(MC|mc)\d{3}$/;                
+        if(regex.test(userid) === false) {
+            printError("userErr", "Please enter a valid userid");
+        } else {
+            printError("userErr", "");
+            userErr = false;
+        }
+    }
+    
+    
+    if(password == "") {
+        printError("passErr", "Please enter your password");
+    } else {
+        
+        var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_=]).{8,}$/;
+        if(regex.test(password) === false) {
+            printError("passErr", "Please enter a valid password");
+        } else{
+            printError("passErr", "");
+            passErr = false;
+        }
+    }
+    
+
+    
+    
+    if((userErr || passErr) == true) {
+       return false;
+    } else 
+    {
+        //alert("welcome");
+        window.open("home.html","_blank");
+        
+    }
+};
+</script>
+</head>
+<body>
+<div class="alert"></div>
+<form name="contactForm" onsubmit="return validateForm()"  action="" method="POST" id="user">
+    <h2>LOGIN HERE</h2>
+    <div class="row">
+        <label>userid</label>
+        <input type="text" name="userid">
+        <div class="error" id="userErr"></div>
+    </div>
+    <div class="row">
+        <label>password</label>
+        <input type="password" name="password">
+        <div class="error" id="passErr"></div>
+    </div>
+    
+   
+    <div class="row">
+        <input type="submit" id="submit" value="Submit">
+    </div>
+</form>
+<a href="index.html"><button type="reset" id="save">BACK</button></a>
+</body>
+</html>
+<!--user id : your USN, password : Kavya@123-->

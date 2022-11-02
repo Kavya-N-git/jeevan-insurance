@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete plan</title>
+
+    <link rel="stylesheet" type="text/css" href="delete_plans.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="src/controller/initialize.js"></script>
+    <script src="src/model/plans.js"></script>
+    <script src="src/view/delete_plans.js"></script>
+    <script>
+      window.addEventListener('load', init.view.deleteplan.setupUI);
+    </script>
+  </head>
+  <body>
+    <div class="alert"></div>
+    <form id="plan">
+        <h3 id="signuph3">Select plan</h3>
+      
+        <label for ="select plan">Select plan</label>
+          <select name="selectplan">
+            <option value="">---</option>
+          </select>
+        
+      <button type="submit" name="commit">Delete</button>
+      <button type="button" class="btn btn-info" style="width: 15vw;height: 6vh;"><a href="home.html" style="color: white;">BACK</a></button>
+    </form>
+    
+  </body>
+</html>
