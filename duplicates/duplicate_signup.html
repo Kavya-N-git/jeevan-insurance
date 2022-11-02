@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="signupcss.css" />
+    <title>Sign up form</title>
+    <script src="js/signup.js"></script>
+    <!--MVC loading-->
+    <script src="src/controller/initialize.js"></script>
+    <script src="src/model/user.js"></script>
+    <script src="src/view/createuser.js"></script>
+    <script>
+      window.addEventListener('load', init.view.createuser.setupUI);
+    </script>
+    <!--end of MVC loading-->
+
+  </head>
+  <body>
+    <div class="alert"></div>
+    <form id="user" method="POST">
+      <h3 id="signuph3">Sign Up Form</h3>
+      <label for="full_name">Full Name</label>
+      <input type="text" name="full_name" id="full_name" placeholder="Enter your Full name" minlength="3" maxlength="15" required pattern="[A-Za-z]+"/>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email id" pattern="^[a-z0-9]+@[a-z]+\.com$" required/>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone" placeholder="Enter phno" maxlength="10" pattern="[0-9]{10}" />
+
+      <label for="dob">Date Of Birth</label>
+      <input type="date" name="dob" id="dob" />
+
+      <label for="country">Country</label>
+      <input type="text" name="country" id="country"/>
+
+      <label for="state">State</label>
+      <select name="state" id="state" tabindex="0">
+        <option value="">Select a state</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="andra-pradesh">Aandra Pradesh</option>
+        <option value="tamil-nadu">TamilNadu</option>
+      </select>
+
+      <label for="city">City</label>
+      <input type="text" name="city" id="city"/>
+
+      <label for="userid">Userid</label>
+      <input type="text" name="userid" id="userid" />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+
+      <label for="security">Security Question</label>
+      <select name="security" id="security" tabindex="0">
+        <option value="">Select a question</option>
+        <option value="best-friend">What's your best friend's name?</option>
+        <option value="pet">What's the name of your first pet?</option>
+        <option value="spouse">Which food you like most?</option>
+      </select>
+      
+      <label for="answer">Answer</label>
+      <input type="text" name="answer" id="answer" />
+
+      <label for="description">Description</label>
+      <textarea
+        name="description"
+        id="description"
+        placeholder="Describe yourself in 100 words"
+      ></textarea>
+
+<!--<button type="confirm" id="confirm" name="confirm" onclick="validation()">CONFIRM</button><br>-->
+      <button type="submit" id="submit" name="commit" onclick="validation()">SUBMIT</button>
+      <button type="submit" id="save" href="signup.html">RESET</button>
+    </form>
+    
+    
+  </body>
+  
+</html
